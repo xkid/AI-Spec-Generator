@@ -4,7 +4,10 @@ import { AppState } from "../types";
 const MODEL_NAME = 'gemini-3-flash-preview';
 
 const getGenAI = () => {
-  const apiKey = localStorage.getItem('gemini_api_key') || process.env.API_KEY;
+  // Safely check for process.env to avoid ReferenceError in browser environments
+  const envKey = (typeof process !== 'undefined' && process.env) ? process.env.API_KEY : undefined;
+  const apiKey = localStorage.getItem('gemini_api_key') || envKey;
+  
   if (!apiKey) {
     throw new Error("請先設定 Gemini API Key");
   }
