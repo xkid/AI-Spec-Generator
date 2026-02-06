@@ -1,0 +1,5 @@
+{
+  "name": "AI Spec Generator",
+  "description": "An intelligent step-by-step wizard to generate comprehensive Product Requirement Documents (PRD) using Gemini models.",
+  "requestFramePermissions": []
+}
